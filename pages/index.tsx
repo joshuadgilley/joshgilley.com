@@ -24,7 +24,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainLayout pageData={pages!.home}>
+      {/* <MainLayout pageData={pages!.home}> */}
         <main className={styles.main}>
           <div className={styles.description}>
             <div id={styles.navbar}>
@@ -125,7 +125,7 @@ export default function Home() {
             </a>
           </div>
         </main>
-      </MainLayout>
+      {/* </MainLayout> */}
     </>
   )
 }

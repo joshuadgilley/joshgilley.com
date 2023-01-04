@@ -39,6 +39,7 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 } */
+@import url(//fonts.googleapis.com/css?family=Nunito);
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -87,6 +88,8 @@ body {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg clip-path='url(%26quot%3b%23SvgjsClipPath1065%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%2332325d'%3e%3c/rect%3e%3ccircle r='31.52' cx='1049.6' cy='346.99' fill='url(%23SvgjsLinearGradient1066)'%3e%3c/circle%3e%3ccircle r='51.185' cx='357.25' cy='237.52' fill='url(%23SvgjsLinearGradient1067)'%3e%3c/circle%3e%3ccircle r='53.495' cx='1291.67' cy='13.72' fill='url(%23SvgjsLinearGradient1068)'%3e%3c/circle%3e%3ccircle r='28.645' cx='439.83' cy='88.28' fill='url(%23SvgjsLinearGradient1069)'%3e%3c/circle%3e%3ccircle r='37.71' cx='732.47' cy='191.55' fill='%2343468b'%3e%3c/circle%3e%3ccircle r='18.725' cx='292.16' cy='356.62' fill='%2343468b'%3e%3c/circle%3e%3ccircle r='24.095' cx='1247.03' cy='82.91' fill='url(%23SvgjsLinearGradient1070)'%3e%3c/circle%3e%3ccircle r='41.435' cx='969.46' cy='144.19' fill='%2343468b'%3e%3c/circle%3e%3c/g%3e%3cdefs%3e%3cclipPath id='SvgjsClipPath1065'%3e%3crect width='1440' height='560' x='0' y='0'%3e%3c/rect%3e%3c/clipPath%3e%3clinearGradient x1='986.56' y1='346.99' x2='1112.6399999999999' y2='346.99' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1066'%3e%3cstop stop-color='%23ab3c51' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%234f4484' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='254.88' y1='237.52' x2='459.62' y2='237.52' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1067'%3e%3cstop stop-color='%23ab3c51' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%234f4484' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='1184.68' y1='13.719999999999999' x2='1398.66' y2='13.719999999999999' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1068'%3e%3cstop stop-color='%23f29b7c' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%237e6286' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='382.53999999999996' y1='88.28' x2='497.11999999999995' y2='88.28' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1069'%3e%3cstop stop-color='%2332325d' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23424488' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='1198.84' y1='82.91' x2='1295.2199999999998' y2='82.91' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1070'%3e%3cstop stop-color='%2384b6e0' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23464a8f' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
 }
 
 a {

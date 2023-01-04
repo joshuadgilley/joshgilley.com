@@ -1,0 +1,32 @@
+#navbar {
+  position: fixed; /* always stay where I put you on the screen */
+  top: 1rem; /* I'm putting you at the bottom with no space in between */
+  width: 100%;
+}
+
+.navItem {
+  display: inline-block;
+  margin: 0 1rem 0 1rem;
+  color: inherit;
+  font-size: 16pt;
+}
+
+.navItem:hover {
+  text-decoration: underline;
+}
+
+#layout {
+  max-height: 100vh;
+}
+
+#footer {
+  position: fixed; /* always stay where I put you on the screen */
+  bottom: 0; /* I'm putting you at the bottom with no space in between */
+  width: 100%;
+  text-align: right;
+}
+
+.socialIcon {
+  display: inline-block;
+  padding: 0.5rem;
+}

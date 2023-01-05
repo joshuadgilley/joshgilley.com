@@ -3,7 +3,6 @@ import Link from "next/link";
 import FacebookIconLink from "./FacebookIconLink";
 import TwitterIconLink from "./TwitterIconLink";
 import InstagramIconLink from "./InstagramIconLink";
-import { Diversity1 } from "@mui/icons-material";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

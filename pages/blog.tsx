@@ -1,9 +1,6 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import React from "react";
-import Markdown from "react-markdown";
-const inter = Inter({ subsets: ["latin"] });
+import styles from "../styles/Home.module.css";
 
 export default function Blog(props: any) {
   return (
@@ -14,18 +11,11 @@ export default function Blog(props: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Markdown>{props.children}</Markdown>
-      </div>
+      <main className={styles.main}>
+        <div className={styles.description}>
+          <p>Blog coming soon.. just found out about mdx..&nbsp;</p>
+        </div>
+      </main>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const children = require("../blogposts/test.md").default;
-  return {
-    props: {
-      children,
-    },
-  };
 }

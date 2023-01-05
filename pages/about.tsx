@@ -1,9 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
 export default function About() {
   return (
@@ -16,9 +12,9 @@ export default function About() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-            <p>This is the about page..&nbsp;</p>
+          <p>This is the about page..&nbsp;</p>
         </div>
       </main>
     </>
-  )
+  );
 }

@@ -1,14 +1,12 @@
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { serialize } from "next-mdx-remote/serialize";
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
 import path from "path";
 import React from "react";
-import styles from "../styles/Home.module.css";
 import fs from 'fs';
 import { Post } from "../types/Post.interface";
 import CardComponent from "../components/common/CardComponent";
+import style from '../styles/Blog.module.css'
 
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -19,8 +17,10 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div style={{width: '20rem', margin: 'auto'}}>
-        {posts.map((post: Post, index: number) => {return (<CardComponent key={index} post={post} />)})}
+      <div className={style.wrapper}>
+        {posts.map((post: Post, index: number) => {
+          return <CardComponent key={index} post={post} />
+        })}
       </div>
     </>
   );
@@ -28,17 +28,14 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 
 export const getStaticProps: GetStaticProps = async () => {
   const articlesDirectory = path.join('articles');
-
   const files = fs.readdirSync(articlesDirectory);
-
+  
   const blogPosts = files.map((fileName: string) => {
     const slug = fileName.replace('.mdx', '');
     const article = fs.readFileSync(path.join('articles', fileName));
     const { data: metaData } = matter(article);
     return { slug, metaData }
   });
-
-  console.log(blogPosts);
 
   return { props: { posts: blogPosts }}
 }

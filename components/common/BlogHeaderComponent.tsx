@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import styles from '../../styles/BlogHeaderComponent.module.css'
 
 interface Props {
     title: string,
@@ -8,9 +9,9 @@ interface Props {
 
 const BlogHeaderComponent: FC<Props> = ({ title, dateString, mainImageUrl}) => {
     return (
-        <div style={{width: '600px', margin: 'auto'}}>
+        <div className={styles.wrapper}>
             <h1>{title}</h1>
-            <img style={{width: '600px'}} src={mainImageUrl} />
+            <img className={styles.wrapperImage} src={mainImageUrl} />
             <p>Posted on {dateString}</p>
         </div>
     )

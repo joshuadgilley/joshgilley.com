@@ -9,6 +9,7 @@ import BlogHeaderComponent from "../../components/common/BlogHeaderComponent";
 import hljs from 'highlight.js';
 import typescript from 'highlight.js/lib/languages/typescript';
 import 'highlight.js/styles/vs2015.css';
+import styles from '../../styles/Slug.module.css';
 
 type Params = {
     [param: string]: any
@@ -25,7 +26,7 @@ export default function Article({ source }: InferGetStaticPropsType<typeof getSt
         hljs.highlightAll();
     }, [])
     return (
-        <div style={{width: '800px', margin: 'auto', backgroundColor: 'white', color: 'black', padding: '2rem'}}>
+        <div className={styles.post}>
             <MDXRemote {...source} components={components}/>
         </div>
     )

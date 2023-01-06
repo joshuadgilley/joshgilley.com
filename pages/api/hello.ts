@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import nodemailer from "nodemailer";
-import cors from "cors";
+const sgMail = require('@sendgrid/mail')
+import getHtmlString from '../../helpers/HtmlString';
 
 type Data = Error | string;
 
@@ -10,33 +10,27 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   const data = req.body;
-  console.log(process.env.NODEMAILER_USERNAME);
+  const { subject } = data;
+  const image = "https://media.istockphoto.com/id/1328032651/vector/cartoon-white-bubble-with-email-notice.jpg?s=612x612&w=0&k=20&c=Olo9PmvJezFAu5mdUHnulKsSpjlTpEVrgvlu2FEevrU=";
+  data.image = image;
+  const htmlString = getHtmlString(data);
 
-  let smtpTransport = nodemailer.createTransport({
-    host: "smtppro.zoho.in",
-    port: 465,
-    secure: true, // true for 465, false for other ports
-    auth: {
-      user: process.env.NODEMAILER_USERNAME, // generated ethereal user
-      pass: process.env.NODEMAILER_PASSWORD, // generated ethereal password
-    },
-  });
-
-  let mailOptions = {
-    from: data.email,
-    to: "joshdgilley@gmail.com",
-    subject: `${data.subject}`,
-    html: `<p>${data.name}</p>
-          <p>${data.email}</p>
-          <p>${data.message}</p>`,
-  };
-
-  smtpTransport.sendMail(mailOptions, (error, response) => {
-    if (error) {
-      res.send(error);
-    } else {
-      res.send("Success");
-    }
-    smtpTransport.close();
-  });
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+  const msg = {
+    to: process.env.PERSONAL_EMAIL, // Change to your recipient
+    from: process.env.PERSONAL_EMAIL, // Change to your verified sender
+    subject: subject,
+    // text: 'and easy to do anywhere, even with Node.js'
+    html: htmlString,
+  }
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log('Email sent')
+      res.send('Email sent')
+    })
+    .catch((error: Data) => {
+      console.error(error)
+      res.send(error)
+    })
 }

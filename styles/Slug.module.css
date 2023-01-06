@@ -1,7 +1,8 @@
 .post {
     width: 800px;
     margin: auto;
-    background-color: white;
+    background-color: #eeeeee;
     color: black;
     padding: 2rem;
+    border-radius: 0.25rem;
 }

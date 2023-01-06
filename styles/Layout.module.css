@@ -1,10 +1,4 @@
-#navbar {
-  position: fixed; /* always stay where I put you on the screen */
-  top: 1rem; /* I'm putting you at the bottom with no space in between */
-  width: 100%;
-}
-
-.navItem {
+/* .navItem {
   display: inline-block;
   margin: 0 1rem 0 1rem;
   color: inherit;
@@ -20,13 +14,12 @@
 }
 
 #footer {
-  position: fixed; /* always stay where I put you on the screen */
-  bottom: 0; /* I'm putting you at the bottom with no space in between */
-  width: 100%;
-  text-align: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 .socialIcon {
   display: inline-block;
-  padding: 0.5rem;
-}
+  margin: 1rem;
+} */

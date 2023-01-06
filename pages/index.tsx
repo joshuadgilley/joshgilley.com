@@ -16,7 +16,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
           <div className={styles.myName}>
-            <h1>{myNameIs}</h1>
+            <p className={styles.myNameIs}>{myNameIs}</p>
           </div>
         </div>
         <div className={styles.typingEffect}>

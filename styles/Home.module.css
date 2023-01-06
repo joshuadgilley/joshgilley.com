@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 .main {
   display: flex;
   flex-direction: column;
@@ -252,8 +254,10 @@
   text-decoration: underline;
 }
 
-.myName {
+.myNameIs {
   padding: 1rem;
+  font-family: 'Montserrat';
+  font-size: 68px;
 }
 
 .typingEffect {

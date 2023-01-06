@@ -54,7 +54,7 @@ export default function Contact() {
     };
 
     try {
-      const res = await axios.post("http://localhost:3000/api/hello", data);
+      const res = await axios.post("http://localhost:3000/api/SendEmail", data);
       console.log(res);
       setSent(true);
       resetForm();

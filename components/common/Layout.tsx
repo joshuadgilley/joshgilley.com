@@ -21,6 +21,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className={styles.navItem}>
             <Link href="/projects">Projects</Link>
           </div>
+          <div className={styles.navItem}>
+            <Link href="/contact">Contact</Link>
+          </div>
         </div>
         {children}
         <div id={styles.footer}>

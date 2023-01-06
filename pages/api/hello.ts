@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 const sgMail = require('@sendgrid/mail')
-import getHtmlString from '../../helpers/HtmlString';
+import getHtmlString from '../../templates/HtmlString';
 
 type Data = Error | string;
 

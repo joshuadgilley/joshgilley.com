@@ -33,7 +33,7 @@ export default function Article({ source }: InferGetStaticPropsType<typeof getSt
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const articlesDirectory = path.join('blog_articles');
+    const articlesDirectory = path.join('project_articles');
     const files = fs.readdirSync(articlesDirectory);
     const paths = files.map((fileName: string) => ({
         params: { slug: fileName.replace('.mdx', '') }
@@ -45,7 +45,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Params> = async ({ params: {slug}}: Params) => {
-    const article = fs.readFileSync(path.join('blog_articles', `${slug}.mdx`));
+    const article = fs.readFileSync(path.join('project_articles', `${slug}.mdx`));
     const { data: metaData, content } = matter(article)
     const mdxSource = await serialize(content, { scope: metaData });
     return { props: { source: mdxSource }}

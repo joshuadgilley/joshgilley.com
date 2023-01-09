@@ -27,12 +27,12 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articlesDirectory = path.join('articles');
+  const articlesDirectory = path.join('blog_articles');
   const files = fs.readdirSync(articlesDirectory);
   
   const blogPosts = files.map((fileName: string) => {
     const slug = fileName.replace('.mdx', '');
-    const article = fs.readFileSync(path.join('articles', fileName));
+    const article = fs.readFileSync(path.join('blog_articles', fileName));
     const { data: metaData } = matter(article);
     return { slug, metaData }
   });

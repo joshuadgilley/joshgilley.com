@@ -3,7 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment, useState } from 'react'
 
 export default function Header() {
-    const [currentName, setCurrentName] = useState("Dashboard");
+    const [currentName, setCurrentName] = useState("");
 
     let navigation = [
         { name: 'Dashboard', href: '/', current: true },
@@ -12,8 +12,8 @@ export default function Header() {
         { name: 'Blog', href: '/blog', current: false },
     ]
 
-    function classNames(...classNamees: any) {
-        return classNamees.filter(Boolean).join(' ')
+    function classNames(...classNames: any) {
+        return classNames.filter(Boolean).join(' ')
     }
 
     return (
@@ -75,7 +75,7 @@ export default function Header() {
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
-                              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                              src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png"
                               alt=""
                             />
                           </Menu.Button>

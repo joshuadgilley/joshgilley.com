@@ -3,9 +3,9 @@ import styles from "../styles/Contact.module.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import EmailErrorAlert from "../components/common/EmailErrorAlert";
 
 export default function Contact({endpoint}: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(endpoint.replace("\"", ""))
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
@@ -26,23 +26,6 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     }, 3000);
   };
 
-  const handleChangeEmail = (e: any) => {
-    if (
-      !e.target.value.match(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      )
-    ) {
-      setEmail(e.target.value);
-      setEmailError(true);
-      if (email === "") {
-        setEmailError(false);
-      }
-    } else {
-      setEmail(e.target.value);
-      setEmailError(false);
-    }
-  };
-
   const formSubmit = async (e: any) => {
     e.preventDefault();
     setButtonText("...sending");
@@ -56,12 +39,14 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
 
     try {
       const endpointWithoutQuotes: string = endpoint.replace("\"", "")
-      const res = await axios.post(endpointWithoutQuotes, data);
+      const res = await axios.post(endpointWithoutQuotes + "meep", data);
       console.log(res);
       setSent(true);
+      setButtonText("Sent!")
       resetForm();
     } catch (error) {
       console.log(error);
+      setEmailError(true);
     }
   };
 
@@ -75,6 +60,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
+          {emailError ? <EmailErrorAlert /> : ""}
           <section className="bg-white dark:bg-gray-900">
             <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                 <h2 className="mb-2 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">{"Contact Me"}</h2>
@@ -114,7 +100,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
                           className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                           placeholder="Leave a comment..."></textarea>
                     </div>
-                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{"Button"}</button>                
+                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{buttonText}</button>                
                   </form>
             </div>
           </section>

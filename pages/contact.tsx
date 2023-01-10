@@ -23,6 +23,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
 
     setTimeout(() => {
       setSent(false);
+      setButtonText("Send Message")
     }, 3000);
   };
 

@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bottom-0 w-full bg-white dark:bg-gray-900">
-      <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-          © 2023 <a href="https://flowbite.com/">Joshua Gilley</a>. All Rights
+    <footer className="bottom-0 w-full dark:bg-gray-900">
+      <div className="px-4 py-6 bg-gray-800 md:flex md:items-center md:justify-between">
+        <span className="text-sm text-gray-400 dark:text-gray-300 sm:text-center">
+          © 2023 <a href="https://joshgilley.com/">Joshua Gilley</a>. All Rights
           Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
@@ -11,7 +11,7 @@ export default function Footer() {
             href="https://www.facebook.com/josh.gilley.94617"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
           >
             <svg
               className="w-5 h-5"
@@ -31,7 +31,7 @@ export default function Footer() {
             href="https://www.instagram.com/joshdgilley/?hl=en"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
           >
             <svg
               className="w-5 h-5"
@@ -51,7 +51,7 @@ export default function Footer() {
             href="https://twitter.com/JoshGilley10"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
           >
             <svg
               className="w-5 h-5"
@@ -67,7 +67,7 @@ export default function Footer() {
             href="https://github.com/joshuadgilley"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
           >
             <svg
               className="w-5 h-5"

@@ -1,6 +1,7 @@
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment, useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [currentName, setCurrentName] = useState("");
@@ -35,10 +36,11 @@ export default function Header() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png" //
-                    alt="Your Company"
+                  <Image
+                    src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png"
+                    alt="Coding"
+                    width={35}
+                    height={35}
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -77,10 +79,12 @@ export default function Header() {
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <Image
                         className="h-8 w-8 rounded-full"
                         src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png"
-                        alt=""
+                        alt="MeIcon"
+                        width={35}
+                        height={35}
                       />
                     </Menu.Button>
                   </div>

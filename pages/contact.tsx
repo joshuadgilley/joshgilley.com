@@ -54,7 +54,7 @@ export default function Contact() {
     };
 
     try {
-      const res = await axios.post(`${process.env.VERCEL_APP_URL}/api/SendEmail`, data);
+      const res = await axios.post(`/api/SendEmail`, data);
       console.log(res);
       setSent(true);
       resetForm();

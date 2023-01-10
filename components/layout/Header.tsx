@@ -11,6 +11,7 @@ export default function Header() {
     { name: "About", href: "/about", current: false },
     { name: "Projects", href: "/projects", current: false },
     { name: "Blog", href: "/blog", current: false },
+    { name: "Contact", href: "/contact", current: false}
   ];
 
   function classNames(...classNames: any) {

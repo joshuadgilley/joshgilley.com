@@ -2,7 +2,6 @@ import { FC } from "react"
 import { Post } from "../../types/Post.interface"
 import * as React from 'react';
 import Link from 'next/link';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
@@ -10,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const CardComponent: FC<{ post: Post }> = ({post}: {post: Post}) => {
+const CardComponent: FC<{ post: Post, endpoint: string }> = ({post, endpoint}: {post: Post, endpoint: string}) => {
     const { slug, metaData } = post;
     const {title, dateString, mainImageUrl, excerpt } = metaData;
     return (
@@ -33,7 +32,7 @@ const CardComponent: FC<{ post: Post }> = ({post}: {post: Post}) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Link href={`/blog/${slug}`} passHref>
+                <Link href={`/${endpoint}/${slug}`} passHref>
                     <Button size="small">Learn More</Button>
                 </Link>
             </CardActions>

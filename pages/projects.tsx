@@ -8,7 +8,7 @@ import { Post } from "../types/Post.interface";
 import CardComponent from "../components/common/CardComponent";
 import style from "../styles/Blog.module.css";
 
-export default function Blog({
+export default function Projects({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -21,7 +21,7 @@ export default function Blog({
       </Head>
       <div className={style.wrapper}>
         {posts.map((post: Post, index: number) => {
-          return <div key={`card_${index}`} className={style.cards}><CardComponent key={index} post={post} /></div>;
+          return <div key={`card_${index}`} className={style.cards}><CardComponent key={index} post={post} endpoint={"projects"} /></div>;
         })}
       </div>
     </>

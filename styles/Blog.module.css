@@ -1,4 +1,9 @@
 .wrapper {
-    width: 20rem;
-    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.cards {
+    margin: 1rem;
+    flex: 0 1 24%;
+ }

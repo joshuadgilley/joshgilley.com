@@ -21,7 +21,7 @@ export default function Blog({
       </Head>
       <div className={style.wrapper}>
         {posts.map((post: Post, index: number) => {
-          return <CardComponent key={index} post={post} />;
+          return <div key={`card_${index}`} className={style.cards}><CardComponent key={index} post={post} /></div>;
         })}
       </div>
     </>

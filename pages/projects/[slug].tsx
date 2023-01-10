@@ -33,6 +33,7 @@ export default function Article({ source }: InferGetStaticPropsType<typeof getSt
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+    console.log("getting here")
     const articlesDirectory = path.join('project_articles');
     const files = fs.readdirSync(articlesDirectory);
     const paths = files.map((fileName: string) => ({

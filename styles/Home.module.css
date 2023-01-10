@@ -263,6 +263,7 @@
 .myNameIs {
   padding: 1rem;
   font-family: 'Montserrat';
+  color: #1f2937;
 }
 
 @media only screen and (max-width: 768px) {

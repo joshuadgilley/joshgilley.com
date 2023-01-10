@@ -2,6 +2,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [currentName, setCurrentName] = useState("");
@@ -80,7 +81,7 @@ export default function Header() {
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
-                      <a href="/about">
+                      <Link href="/about">
                         <Image
                           className="h-8 w-8 rounded-full"
                           src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png"
@@ -88,7 +89,7 @@ export default function Header() {
                           width={35}
                           height={35}
                         />
-                      </a>
+                      </Link>
                     </Menu.Button>
                   </div>
                   {/* <Transition

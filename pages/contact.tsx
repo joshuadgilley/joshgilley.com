@@ -52,6 +52,8 @@ export default function Contact() {
       message,
       subject,
     };
+    console.log(data);
+    console.log(process.env.SENDEMAIL_ENDPOINT);
 
     try {
       const res = await axios.post(`${process.env.SENDEMAIL_ENDPOINT}`, data);

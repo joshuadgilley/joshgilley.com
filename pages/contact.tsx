@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import EmailErrorAlert from "../components/common/EmailErrorAlert";
-import { ScriptElementKindModifier } from "typescript";
 
 export default function Contact({endpoint}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [name, setName] = useState("");
@@ -40,7 +39,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
 
     try {
       const endpointWithoutQuotes: string = endpoint.replace("\"", "")
-      const res = await axios.post(endpointWithoutQuotes + "meep", data);
+      const res = await axios.post(endpointWithoutQuotes, data);
       console.log(res);
       setSent(true);
       setButtonText("Sent!")

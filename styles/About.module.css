@@ -3,14 +3,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 5rem;
+    padding: 3rem;
+    background-color: white;
+    opacity: 0.8;
+    margin: 1rem;
+    border-radius: 0.25rem;
   }
   
   .description p {
     position: relative;
     margin: 0;
     padding: 1rem;
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-    border-radius: var(--border-radius);
   }

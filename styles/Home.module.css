@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 15rem;
+  padding: 12rem 5rem;
 }
 
 .description {
@@ -254,14 +254,27 @@
   text-decoration: underline;
 }
 
-.myNameIs {
-  padding: 1rem;
-  font-family: 'Montserrat';
-  font-size: 68px;
-}
-
 .typingEffect {
   display: block;
   padding: 0;
   margin: 0;
+}
+
+.myNameIs {
+  padding: 1rem;
+  font-family: 'Montserrat';
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .myNameIs {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For mobile phones: */
+  .myNameIs {
+    font-size: 68px;
+  }
 }

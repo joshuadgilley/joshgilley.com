@@ -1,10 +1,10 @@
 import Head from "next/head";
 import styles from "../styles/Contact.module.css";
-import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import axios from "axios";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-export default function Contact() {
+export default function Contact({endpoint}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
@@ -52,11 +52,9 @@ export default function Contact() {
       message,
       subject,
     };
-    console.log(data);
-    console.log(process.env.SENDEMAIL_ENDPOINT);
 
     try {
-      const res = await axios.post(`${process.env.SENDEMAIL_ENDPOINT}`, data);
+      const res = await axios.post(endpoint, data);
       console.log(res);
       setSent(true);
       resetForm();
@@ -123,3 +121,7 @@ export default function Contact() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  return { props: { endpoint: process.env.SENDEMAIL_ENDPOINT } };
+};

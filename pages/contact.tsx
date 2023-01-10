@@ -5,7 +5,7 @@ import axios from "axios";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 export default function Contact({endpoint}: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(endpoint);
+  console.log(endpoint.replace("\"", ""))
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
@@ -55,7 +55,8 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     };
 
     try {
-      const res = await axios.post(endpoint, data);
+      const endpointWithoutQuotes: string = endpoint.replace("\"", "")
+      const res = await axios.post(endpointWithoutQuotes, data);
       console.log(res);
       setSent(true);
       resetForm();

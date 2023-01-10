@@ -5,6 +5,7 @@ import axios from "axios";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 export default function Contact({endpoint}: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(endpoint);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");

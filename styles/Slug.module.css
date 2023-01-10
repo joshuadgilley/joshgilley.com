@@ -1,7 +1,9 @@
 .post {
     width: 95vw;
     margin: auto;
-    /* background-color: #eeeeee; */
+    margin-top: 2rem;
+    background-color: white;
+    opacity: 0.8;
     color: black;
     padding: 2rem;
     border-radius: 0.25rem;

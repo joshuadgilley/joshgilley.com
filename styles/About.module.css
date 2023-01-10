@@ -9,6 +9,19 @@
     margin: 1rem;
     border-radius: 0.25rem;
   }
+
+  .description {
+    display: inline-block;
+  }
+
+  .img {
+    display: inline-block;
+    border-radius: 0.25rem;
+  }
+
+  .about {
+    display: inline-block;
+  }
   
   .description p {
     position: relative;

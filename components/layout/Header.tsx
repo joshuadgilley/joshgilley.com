@@ -67,29 +67,31 @@ export default function Header() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
+                {/* <button
                   type="button"
                   className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </button> */}
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
-                      <Image
-                        className="h-8 w-8 rounded-full"
-                        src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png"
-                        alt="MeIcon"
-                        width={35}
-                        height={35}
-                      />
+                      <a href="/about">
+                        <Image
+                          className="h-8 w-8 rounded-full"
+                          src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png"
+                          alt="MeIcon"
+                          width={35}
+                          height={35}
+                        />
+                      </a>
                     </Menu.Button>
                   </div>
-                  <Transition
+                  {/* <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"
                     enterFrom="transform opacity-0 scale-95"
@@ -139,7 +141,7 @@ export default function Header() {
                         )}
                       </Menu.Item>
                     </Menu.Items>
-                  </Transition>
+                  </Transition> */}
                 </Menu>
               </div>
             </div>

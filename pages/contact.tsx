@@ -48,6 +48,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     } catch (error) {
       console.log(error);
       setEmailError(true);
+      setButtonText("Send Message")
       setTimeout(() => {
         setEmailError(false);
       }, 3000);

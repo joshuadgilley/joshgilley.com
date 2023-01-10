@@ -1,6 +1,6 @@
 export default function EmailErrorAlert() {
     return (
-        <div role="alert">
+        <div role="alert" className="w-5">
             <div className="bg-red-500 text-white font-bold rounded-t px-4 py-2">
                 Error
             </div>

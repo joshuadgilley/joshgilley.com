@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import EmailErrorAlert from "../components/common/EmailErrorAlert";
+import { ScriptElementKindModifier } from "typescript";
 
 export default function Contact({endpoint}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [name, setName] = useState("");
@@ -47,6 +48,9 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     } catch (error) {
       console.log(error);
       setEmailError(true);
+      setTimeout(() => {
+        setEmailError(false);
+      }, 3000);
     }
   };
 

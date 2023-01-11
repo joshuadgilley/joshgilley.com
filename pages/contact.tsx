@@ -68,7 +68,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
           {emailError ? <EmailErrorAlert /> : ""}
           <section className="">
             <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                <h2 className="mb-2 text-4xl tracking-tight font-extrabold text-center text-gray-800">{"Contact Me"}</h2>
+                <h2 className="mb-2 mt-0 text-4xl tracking-tight font-extrabold text-center text-gray-800">{"Contact Me"}</h2>
                 <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">{"I'd love to hear from you"}</p>
                 <form className="space-y-8" onSubmit={(e) => formSubmit(e)}>
                     <div>

@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 12rem 5rem;
+  padding: 8rem 5rem;
 }
 
 .description {
@@ -269,7 +269,7 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .myNameIs {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 

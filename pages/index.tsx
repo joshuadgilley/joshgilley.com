@@ -4,7 +4,6 @@ import { Box } from "@mui/material";
 import TypingEffect from "../components/common/TypingEffect";
 
 export default function Home() {
-  const myNameIs = "I'm Josh";
   return (
     <>
       <Head>
@@ -16,7 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
           <div className={styles.myName}>
-            <p className={styles.myNameIs}>{myNameIs}</p>
+            <p className={styles.myNameIs}>{"I'm Josh"}</p>
           </div>
         </div>
         <div className={styles.typingEffect}>

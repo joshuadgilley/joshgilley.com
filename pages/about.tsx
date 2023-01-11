@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/About.module.css";
 import Image from "next/image";
-import imageofMe from '../public/images/josh.jpeg';
 
 export default function About() {
   return (
@@ -17,7 +16,7 @@ export default function About() {
         <div className={styles.description}>
           <div>
             <Image
-              src={imageofMe}
+              src="/josh.jpeg"
               alt="ItMe"
               width={300}
               height={500}

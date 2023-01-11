@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@media only screen and (max-width: 768px) {
+  .prose {
+    min-width: 80vw;
+  }
+  
+  .prose :where(a):not(:where([class~="not-prose"] *)) {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .prose {
+    min-width: 90vw;
+    margin: 2rem;
+  }
+  
+  .prose :where(a):not(:where([class~="not-prose"] *)) {
+    color: white;
+    text-decoration: none;
+  }
+}
 /* :root {
   --max-width: 1100px;
   --border-radius: 12px;

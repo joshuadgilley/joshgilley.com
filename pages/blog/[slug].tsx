@@ -27,7 +27,9 @@ export default function Article({ source }: InferGetStaticPropsType<typeof getSt
     }, [])
     return (
         <div className={styles.post}>
-            <MDXRemote {...source} components={components}/>
+            <div className="prose">
+                <MDXRemote {...source} components={components}/>
+            </div>
         </div>
     )
 }

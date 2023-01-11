@@ -2,10 +2,18 @@
 module.exports = {
   content: [
     './pages/*.tsx',
-    './components/**/*.{tsx, js}'
+    './components/**/*.{tsx, js}',
+    './blog_articles/*.mdx',
+    './project_articles/*.mdx'
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography")
+  ],
+  important: true,
+  // corePlugins: {
+  //   preflight: false,
+  // }
 }

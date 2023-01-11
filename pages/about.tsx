@@ -16,7 +16,7 @@ export default function About() {
         <div className={styles.description}>
           <div>
             <Image
-              src="/../public/images/josh.jpg"
+              src="/josh.jpg"
               alt="ItMe"
               width={300}
               height={500}

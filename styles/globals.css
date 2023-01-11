@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.prose :where(p):not(:where([class~=not-prose] *)) {
+  margin-bottom: 0;
+}
+
 .prose {
   margin: auto;
 }

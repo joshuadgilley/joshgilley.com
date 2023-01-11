@@ -13,11 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.center}>
-          <div className={styles.myName}>
-            <p className={styles.myNameIs}>{"I'm Josh"}</p>
-          </div>
-        </div>
+        <p className={styles.myNameIs}>{"I'm Josh"}</p>
         <div className={styles.typingEffect}>
           <Box>
             <TypingEffect

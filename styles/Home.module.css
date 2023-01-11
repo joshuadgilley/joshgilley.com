@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 8rem 5rem;
+  margin: 5rem;
 }
 
 .description {
@@ -27,8 +27,6 @@
 
 .description p {
   position: relative;
-  margin: 0;
-  padding: 1rem;
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
@@ -261,7 +259,6 @@
 }
 
 .myNameIs {
-  padding: 1rem;
   font-family: 'Montserrat';
   color: #1f2937;
 }

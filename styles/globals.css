@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose {
+  margin: auto;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+  color: white;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 768px) {
   .prose {
     min-width: 80vw;
-  }
-  
-  .prose :where(a):not(:where([class~="not-prose"] *)) {
-    color: white;
-    text-decoration: none;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .prose {
-    min-width: 90vw;
-    margin: 2rem;
-  }
-  
-  .prose :where(a):not(:where([class~="not-prose"] *)) {
-    color: white;
-    text-decoration: none;
+    min-width: 96vw;
   }
 }
 
-.prose p {
-  padding: 0;
-  margin: 0;
+.prose p, h1, h2 {
+  max-width: 87vw;
+}
+
+.prose pre {
+  max-width: 85vw;
+
 }
 /* :root {
   --max-width: 1100px;

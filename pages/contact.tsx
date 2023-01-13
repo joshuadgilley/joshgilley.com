@@ -10,7 +10,6 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
-  const [sent, setSent] = useState(false);
   const [buttonText, setButtonText] = useState("Send Message");
   const [emailError, setEmailError] = useState(false);
   const [emailErrorText, setEmailErrorText] = useState("The email did not send..")
@@ -24,7 +23,6 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     setSubject("");
     setButtonText("Message Sent");
     setTimeout(() => {
-      setSent(false);
       setButtonText("Send Message")
     }, 3000);
   };
@@ -59,7 +57,6 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     setButtonText("...sending");
     try {
       checkRecaptchaAndSend();
-      setSent(true);
       setButtonText("Sent!")
       resetForm();
     } catch (error) {

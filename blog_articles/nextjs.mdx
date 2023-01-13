@@ -1,9 +1,9 @@
 ---
-title: "NextJS"
-dateString: "November 13, 2021"
-mainImageUrl: "/images/articles/nextjs.png"
+title: "Next.js - InferGetStaticPropsType"
+dateString: "January 13, 2023"
+mainImageUrl: "/images/articles/next.png"
 endpoint: "blog"
-excerpt: "Learn about NextJS"
+excerpt: "Does it defeat the purpose?"
 ---
 
 <BlogHeaderComponent 
@@ -13,16 +13,27 @@ excerpt: "Learn about NextJS"
     endpoint={endpoint}
 />
 
-# I love this planet! I've got wealth, fame, and access to the depths of sleaze that those things bring.
+# Next.js with Typescript - Does inferred typing defeat the purpose?
 
-Hey, tell me something. You've got all this money. How come you always dress like you're doing your laundry? Please, Don-Bot… look into your hard drive, and open your mercy file! Yeah. Give a little credit to our public schools.
+Next.js was release in 2016 by Vercel and has been growing in popularity over the past few years. I needed a [portfolio website](www.joshgilley.com) as an opportunity to learn Next.js with Typescript. Overrall, it has been a good experience but there have been a few times where the two felt counter-intuitive. 
 
-Alright, let's mafia things up a bit. Joey, burn down the ship. __Clamps, burn down the crew.__ *Fry, you can't just sit here in the dark listening to classical music.* But, like most politicians, he promised more than he could deliver.
+Last week I was going through a code review and while going over the Contact component, I explained to my colleague that I used InferGetStaticPropsType as a quick fix to avoid creating a type for the return props of getStaticProps. I did this because I was following an article I read to set up the component, not thinking about why I was doing what I was doing. 
 
-## Bender?! You stole the atom.
-
-With gusto. As an interesting side note, as a head without a body, I envy the dead. Shinier than yours, meatbag. My fellow Earthicans, as I have explained in my book 'Earth in the Balance'', and the much more popular ''Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards.
-
-```typescript
-const hello: number = 4;
 ```
+export  default  function  Contact({endpoint}: InferGetStaticPropsType<typeof  getStaticProps>)
+```
+He stopped me and asked __"Doesn't that completely defeat the purpose of Typescript?"__ *What he meant was, if the structure of the props were to ever change type-wise, it wouldn't get caught.* I didn't have a great response. 
+
+## Oh no! Don't I need to know everything?
+
+One of my favorite things to do when learning some new tech is to call this colleague and just explain what I'm learning. He is very good at poking holes which makes me curious enough to investigate further. 
+
+1. Explain process in code review
+2. Have colleagues poke holes when something doesn't add up
+3. Investigate why you don't have a good answer
+
+### InferGetStaticPropsType - so is it good or bad?
+
+In the end, I use InferGetStaticPropsType to save on key strokes, but it does feel like more of a loophole around the TypeScript compiler. Feel free to reach out if you have any thoughts on this by visiting my [contact page](www.joshgilley.com/contact). 
+
+Thanks for reading!

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import EmailErrorAlert from "../components/common/EmailErrorAlert";
+import EmailSent from "../components/common/EmailSent";
 
 export default function Contact({endpoint}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [name, setName] = useState("");
@@ -12,6 +13,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
   const [subject, setSubject] = useState("");
   const [buttonText, setButtonText] = useState("Send Message");
   const [emailError, setEmailError] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
   const [emailErrorText, setEmailErrorText] = useState("The email did not send..")
   const siteKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
   const recaptchaSrc = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
@@ -37,6 +39,13 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     }, 3000);
   }
 
+  const resetSuccessMessage = () => {
+    setMessageSent(true)
+    setTimeout(() => {
+      setMessageSent(false);
+    }, 3000);
+  }
+
   const checkRecaptchaAndSend = () => {
     let data = {name, email, message, subject, token: ""};
     const endpointWithoutQuotes: string = endpoint.replace("\"", "")
@@ -55,14 +64,17 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
   const formSubmit = async (e: any) => {
     e.preventDefault();
     setButtonText("...sending");
-    try {
-      checkRecaptchaAndSend();
-      setButtonText("Sent!")
-      resetForm();
-    } catch (error) {
-      console.log(error);
-      resetErrors("The email did not send..");
-    }
+    setTimeout(() => {
+      try {
+        checkRecaptchaAndSend();
+        setButtonText("Sent!")
+        resetSuccessMessage();
+        resetForm();
+      } catch (error) {
+        console.log(error);
+        resetErrors("The email did not send..");
+      }
+    }, 3000);
   };
 
   return (
@@ -77,6 +89,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
       <main className={styles.main}>
         <div className={styles.description}>
           {emailError ? <EmailErrorAlert text={emailErrorText}/> : ""}
+          {messageSent ? <EmailSent /> : ""}
           <section className="">
             <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                 <h2 className="mb-2 mt-0 text-4xl tracking-tight font-extrabold text-center text-gray-800">{"Contact Me"}</h2>

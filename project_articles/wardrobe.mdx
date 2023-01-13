@@ -1,0 +1,68 @@
+---
+title: "Weather Wardrobe Application"
+dateString: "January 1, 2023"
+mainImageUrl: "/images/articles/wardrobe.png"
+endpoint: "projects"
+excerpt: "No more suede in the rain!"
+---
+
+<BlogHeaderComponent 
+    title={title}
+    dateString={dateString}
+    mainImageUrl={mainImageUrl}
+    endpoint={endpoint}
+/>
+
+# Weather Wardrobe Application
+
+Ever been caught in the rain while wearing suede shoes? I have.. many times. This inspired to write a simple cloud application that would send me wardrobe suggestions based on the weather for that day. 
+
+## Step One: Gather Weather Data
+```
+module.exports =  async  function  (context, req)  {
+	const axios = require('axios');
+	const  OPEN_WEATHER_KEY  = process.env.OPEN_WEATHER_KEY;
+	const  USER_ZIP  = req.query.zip;
+	const locationDetails =  await axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=${USER_ZIP}&appid=${OPEN_WEATHER_KEY}`)
+	const lat = locationDetails.data.lat;
+	const lon = locationDetails.data.lon;
+	const weatherDetails =  await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_KEY}`);
+	context.res =  {
+	body: weatherDetails.data
+	};
+}
+```
+
+## Step Two: Select Outfits from the Model
+
+```
+const chooseRandomOutfitBasedOnDetails =  (outfitSelections, gender)  =>  {
+	let returnString =  "";
+	const isMale = gender === Male;
+	const casual = isMale ? outfitSelections["Men"].Casual : outfitSelections["Women"].Casual;
+	const formal = isMale ? outfitSelections["Men"].Formal: outfitSelections["Women"].Formal;
+	returnString +=  `Casual: ${casual[generateRandom(casual.length -  1)]}\n\n`;
+	returnString +=  `Formal: ${formal[generateRandom(formal.length -  1)]}\n\n`;
+	return returnString;
+};
+```
+
+## Step Three: Send Selections by SMS
+```
+await twilioClient.messages.create({
+	body: wardrobeMessage.data,
+	to:  "#",
+	from:  "#"
+	},  function  (error, message)  {
+		if  (!error)  {
+			console.log('Success! The SID for this SMS message is:');
+		}  else  {
+			console.log('Oops! There was an error.');
+		}
+	}
+});
+```
+
+All of this was done using Microsoft Azure, Node.js and the Twilio API!
+
+Thanks for reading!

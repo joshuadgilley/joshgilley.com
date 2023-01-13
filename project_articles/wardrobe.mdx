@@ -28,7 +28,7 @@ module.exports =  async  function  (context, req)  {
 	const lon = locationDetails.data.lon;
 	const weatherDetails =  await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_KEY}`);
 	context.res =  {
-	body: weatherDetails.data
+		body: weatherDetails.data
 	};
 }
 ```

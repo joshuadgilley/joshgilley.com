@@ -17,8 +17,8 @@ export default function Home() {
         <div className={styles.typingEffect}>
           <Box>
             <TypingEffect
-              staticText="I am a"
-              text={["software engineer", "cloud developer"]}
+              staticText="I am a software"
+              text={["engineer", "designer", "blogger"]}
             />
           </Box>
         </div>

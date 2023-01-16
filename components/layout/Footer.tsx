@@ -1,10 +1,13 @@
+const dayjs = require("dayjs");
+
 export default function Footer() {
+  const year = dayjs().year();
   return (
     <footer className="bottom-0 w-full dark:bg-gray-900">
       <div className="px-4 py-6 bg-gray-800 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-400 dark:text-gray-300 sm:text-center">
-          © 2023 <a href="https://joshgilley.com/">Joshua Gilley</a>. All Rights
-          Reserved.
+          © {year} <a href="https://joshgilley.com/">Joshua Gilley</a>. All
+          Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
           <a

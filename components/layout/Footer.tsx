@@ -3,9 +3,9 @@ const dayjs = require("dayjs");
 export default function Footer() {
   const year = dayjs().year();
   return (
-    <footer className="bottom-0 w-full dark:bg-gray-900">
+    <footer className="bottom-0 w-full">
       <div className="px-4 py-6 bg-gray-800 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-400 dark:text-gray-300 sm:text-center">
+        <span className="text-sm text-gray-400 sm:text-center">
           © {year} <a href="https://joshgilley.com/">Joshua Gilley</a>. All
           Rights Reserved.
         </span>
@@ -14,7 +14,7 @@ export default function Footer() {
             href="https://www.facebook.com/josh.gilley.94617"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100"
           >
             <svg
               className="w-5 h-5"
@@ -34,7 +34,7 @@ export default function Footer() {
             href="https://www.instagram.com/joshdgilley/?hl=en"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100"
           >
             <svg
               className="w-5 h-5"
@@ -54,7 +54,7 @@ export default function Footer() {
             href="https://twitter.com/JoshGilley10"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100"
           >
             <svg
               className="w-5 h-5"
@@ -70,7 +70,7 @@ export default function Footer() {
             href="https://github.com/joshuadgilley"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-400 hover:text-gray-100 dark:hover:text-white"
+            className="text-gray-400 hover:text-gray-100"
           >
             <svg
               className="w-5 h-5"

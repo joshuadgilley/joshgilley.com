@@ -30,7 +30,7 @@ export default function About() {
           <div className={styles.about}>
             <p>
               Software engineer based out of Charleston, SC with a computer
-              science degree and over 2 years of experience in the industry.
+              science degree and over 3 years of experience in the industry.
               Experienced, as a full-stack developer, in maintaining both
               front-end and back-end web applications. Strong problem-solving
               skills and the ability to effectively communicate technical

@@ -15,6 +15,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
   const [emailError, setEmailError] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
   const [emailErrorText, setEmailErrorText] = useState("The email did not send..")
+  const [emailSending, setEmailSending] = useState(false);
   const siteKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
   const recaptchaSrc = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
 
@@ -24,6 +25,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     setEmail("");
     setSubject("");
     setButtonText("Message Sent");
+    setEmailSending(false);
     setTimeout(() => {
       setButtonText("Send Message")
     }, 3000);
@@ -33,6 +35,7 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
     setEmailErrorText(text)
     setEmailError(true);
     setButtonText("Send Message")
+    setEmailSending(false);
     setTimeout(() => {
       setEmailError(false);
       setEmailErrorText("The email did not send..");
@@ -64,6 +67,8 @@ export default function Contact({endpoint}: InferGetStaticPropsType<typeof getSt
   const formSubmit = async (e: any) => {
     e.preventDefault();
     setButtonText("...sending");
+    if (emailSending) return;
+    setEmailSending(true);
     setTimeout(() => {
       try {
         checkRecaptchaAndSend();

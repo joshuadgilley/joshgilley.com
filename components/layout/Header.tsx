@@ -43,6 +43,7 @@ export default function Header() {
                     alt="Coding"
                     width={35}
                     height={35}
+                    priority={true}
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -88,6 +89,7 @@ export default function Header() {
                           alt="MeIcon"
                           width={35}
                           height={35}
+                          priority={true}
                         />
                       </Link>
                     </Menu.Button>

@@ -24,6 +24,7 @@ export default function About() {
               width={300}
               height={500}
               className={styles.img}
+              priority={true}
             />
           </div>
           <div className={styles.about}>

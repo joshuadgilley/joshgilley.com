@@ -1,0 +1,39 @@
+---
+title: "Serverless Full Stack with AWS"
+dateString: "January 30, 2023"
+mainImageUrl: "/images/articles/fullstack.png"
+endpoint: "projects"
+excerpt: "Uses AWS Amplify, Lambda, API Gateway, DynamoDB & Postgres RDS"
+---
+
+<BlogHeaderComponent 
+    title={title}
+    dateString={dateString}
+    mainImageUrl={mainImageUrl}
+    endpoint={endpoint}
+/>
+
+# Serverless Full Stack Using AWS
+
+I've been exploring the cloud for a few years now and I think I've settled into my preferred stack. It's cheap, scalable, and easy to document and manage. To nail down this method, I built a boilerplate react application to demonstrate the various stages of this build. I'll go through and explain each stage and the tools I used. I hope to show others what I've learned and hopefully get some feedback to continue to expand on my understanding of these tools. Keep in mind I'm still wrapping up the build, but I wanted to go ahead and document the process. 
+
+## Stage 1: Frontend
+The goal of the application, as stated above, is to demonstrate the front-to-back flow of building a full-stack serverless application. So rather than build out complex features, I stuck to the basics. A login page, a registration page, and a simple page that demonstrates some selected details about the user, their favorite color, a favorite song, etc. I built this using React.js, Typescript, TailwindCSS, and AWS Amplify for quick and easy hosting.  
+
+## Stage 2: API
+For the API, I'm using AWS API Gateway using Lambda functions. I've enjoyed using the gateway with Lambda. Lambda functions are easily scalable and very cheap. For this project, there are a few lambda functions responsible for authenticating a user's email and confirming the hash of the email + password + salt for login using SHA256.
+
+## Stage 3: Backend
+As for the back, I'm using DynamoDB for all things user related. I thought NoSQL made sense for this. As for all of the details about the application: colors, songs, etc. I've organized these in a PostgreSQL relational database service. This way when you're selecting a color or a song, we can use the ID of that color in the corresponding table. I also used this as a way to get more comfortable setting up and using RDS being that I've relied heavily on NoSQL for most of my projects. 
+
+## Stage 4: Documentation 
+For documentation I'm using stackedit.io to write out the markdown, I'm using my website to host the content, and cloudcraft.co to design visuals of the architecture. 
+
+## Stage 5: Security
+The main points of the security in this application would be making sure that there are no sensitive details exposed in the code and controlling access to the API Gateway. For this, we make sure to store sensitive information in the environment variables of our lambda functions and the Amplify application itself. The other piece of this is securing the REST API. For this, I'm using standard IAM roles and policies to control, edit and access the gateway. I'm also considering the use of Lambda authorizers to better control who is allowed in and out. 
+
+## Stage 6: DevOps
+This step is pretty straightforward forward being that, I point Amplify to the GitHub branch, mine being "Main", that the application lives in. Every time I push a new version into that repository, the application's build is automatically triggered again. 
+
+### Final Thoughts:
+The process of building out this application is eye-opening mainly because of the ease of use. I recall, the setup and management of Node.js servers and getting them deployed, and thinking about scalability and it can quickly feel like a headache. I've found that using AWS has taken a lot of the headache out of dealing with the backend. It's also quick and easy. I'd love to hear your thoughts on how I've set this up. Agreements and disagreements are welcome. Thanks for reading!

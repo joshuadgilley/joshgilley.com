@@ -31,7 +31,7 @@ For documentation I'm using stackedit.io to write out the markdown, I'm using my
 The main points of the security in this application would be making sure that there are no sensitive details exposed in the code and controlling access to the API Gateway. For this, we make sure to store sensitive information in the environment variables of our lambda functions and the Amplify application itself. The other piece of this is securing the REST API. For this, I'm using standard IAM roles and policies to control, edit and access the gateway. I'm also considering the use of Lambda authorizers to better control who is allowed in and out. 
 
 ## Stage 6: DevOps
-This step is pretty straightforward forward being that, I point Amplify to the GitHub branch, mine being "Main", that the application lives in. Every time I push a new version into that repository, the application's build is automatically triggered again. 
+This step is pretty straightforward being that, I point Amplify to the GitHub branch, mine being "Main", that the application lives in. Every time I push a new version into that repository, the application's build is automatically triggered again. 
 
 ### Final Thoughts:
 The process of building out this application is eye-opening mainly because of the ease of use. I recall, the setup and management of Node.js servers and getting them deployed, and thinking about scalability and it can quickly feel like a headache. I've found that using AWS has taken a lot of the headache out of dealing with the backend. It's also quick and easy. I'd love to hear your thoughts on how I've set this up. Agreements and disagreements are welcome. Thanks for reading!
